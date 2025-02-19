@@ -63,7 +63,7 @@ All odd numbers are: 1,3,5
 ## Problem Statement
 Write a C program that accepts two integers `a` and `b` from the user. The program should print all the divisor of a between `a` and `b`.
 
-### Input:
+### Input: 
 - Two integers `a` and `b`.
 
 ### Output:
