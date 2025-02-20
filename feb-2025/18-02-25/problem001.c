@@ -5,14 +5,17 @@ int main(){
     scanf("%d",&a);
     printf("Enter the value of b:");
     scanf("%d",&b);
+    
     i=a;
+    printf("All positive numbar are: ");
     while(i<=b){
-        i++;
+        
         if(i%2==0){
-            printf("%d\t",i);
+            printf("%d, ",i);
                 
         }
-       
+       i++;
     }
+    
     return 0;
 }
