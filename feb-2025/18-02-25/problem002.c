@@ -5,9 +5,10 @@ int main(){
     scanf("%d",&a);
     printf("Enter the value of b:");
     scanf("%d",&b);
-    for(i=a;i<b;i+=2){
+  printf("All odd numbar are: ");
+    for(i=a;i<=b;i++){
         if(i%2==1){
-            printf("%d  ",i);
+            printf("%d,  ",i);
         }
     }
     return 0;
