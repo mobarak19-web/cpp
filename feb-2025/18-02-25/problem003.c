@@ -6,9 +6,10 @@ int main() {
    scanf("%d",&a);
     printf("Enter the  value of b:");
     scanf("%d",&b);
-    for(i=a;i<=b; i+=2){
-        if(b%2==0){
-            printf("%d ",i);
+    printf("All divisor of a is: ");
+    for(i=1;i<=b; i++){
+        if(i%a==0){
+            printf("%d, ",i);
     
         }
 
