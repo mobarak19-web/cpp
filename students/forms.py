@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 # from django.contrib.auth.forms import CustomUser
 from django.contrib.auth.forms import PasswordChangeForm
 
-
+ 
 class studentForm(forms.ModelForm):
     class Meta:
         model = student
