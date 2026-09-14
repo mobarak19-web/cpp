@@ -6,6 +6,7 @@
 #     list_display = ('id', 'name', 'email','age', 'course', 'semester', 'created_at')
 
 
+
 # admin.site.register(students, Adminstudents)
 
 
