@@ -306,6 +306,7 @@ def signup(request):
     return render(request, 'signup.html', context)
 
 
+
 # def signup(request):
 #      context ={}
 #      if request.method=="POST":
