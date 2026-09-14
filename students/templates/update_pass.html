@@ -1,0 +1,33 @@
+{% block content %}
+
+<div class="container">
+
+<h3>{{ error }}</h3>
+
+<form action="{% url 'update_pass' %}" method="post">
+    {% csrf_token %}
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <br><br>
+
+    <label for="otp">OTP:</label>
+    <input type="number" name="otp" id="otp" required>
+    <br><br>
+
+    <label for="password">New Password</label>
+    <input type="password" name="password" id="password" required>
+    <br><br>
+
+    <label for="confirm_pass">Confirm Password</label>
+    <input type="password" name="confirm_pass" id="confirm_pass" required>
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .username {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Add Student Button */
+        .btn-student {
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-student:hover {
+            background-color: #218838;
+        }
+
+        /* Logout Button */
+        .btn-logout {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-logout:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        {% if user.is_authenticated %}
+
+            <h1>
+                স্বাগতম,
+                <span class="username">{{ user.username }}</span>!
+            </h1>
+            <a href="{% url 'add_student' %}" class="btn-student">
+    Add Student
+</a>
+
+
+            <p>
+                আপনার অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে এবং লগইন করা আছে।
+            </p>
+
+            <!-- Add Student -->
+            <a href="{% url 'add_student' %}" class="btn-student">
+                Add Student
+            </a>
+
+            <!-- Logout -->
+            <a href="{% url 'logout' %}" class="btn-logout">
+                Logout
+            </a>
+
+        {% else %}
+
+            <h1>স্বাগতম!</h1>
+
+            <p>
+                আপনি সিস্টেমে লগইন করেননি।
+            </p>
+
+            <!-- Login -->
+            <a href="{% url 'signin' %}"
+               class="btn-logout"
+               style="background-color: #28a745;">
+                Login
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

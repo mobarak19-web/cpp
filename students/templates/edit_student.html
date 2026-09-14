@@ -1,0 +1,38 @@
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ student.name }}">
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ student.email }}">
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" name="age" value="{{ student.age }}">
+    <br><br>
+
+    <label>Course:</label>
+    <input type="text" name="course" value="{{ student.course }}">
+    <br><br>
+
+    <label>Semester:</label>
+    <input type="number" name="semester" value="{{ student.semester }}">
+    <br><br>
+
+    <label>Photo:</label>
+    <input type="file" name="photo">
+    <br><br>
+
+    {% if student.photo %}
+        <img src="students/templates/photo.png" alt="" width="100">
+        <!-- <img src="{{ student.photo.url }}" width="100"> -->
+    {% endif %}
+
+    <br><br>
+
+    <button type="submit">Update</button>
+
+</form>

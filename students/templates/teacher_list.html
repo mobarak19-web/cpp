@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content %}
+<h2> Teacher list</h2>
+
+ <a href="{% url 'add_teacher' %}" class="btn btn-success mb-3" > Add Teacher </a>
+
+<table class="table table-bordered table-striped align-middle w-100">
+  
+    <thead class="table-dark">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Age</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    {% for teacher in teachers %}
+    <tr>
+        <td>{{teacher.name}}</td>
+        <td>{{teacher.email}}</td>
+        <td>{{teacher.department}}</td>
+        <td>{{teacher.designation}}</td>
+        <td>{{teacher.age}}</td>
+
+        <td>
+            <a href="{% url 'edit_teacher' teacher.id %}" class="btn btn-primary btn-sm">Edit</a>
+            <a href="{% url 'delete_teacher' teacher.id %}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

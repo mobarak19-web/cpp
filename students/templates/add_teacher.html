@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-dark text=white text-center rounded-top-4">
+                <h4 class="mb-0"> +Add New Teacher </h4>
+
+            </div>
+            <div class="card-body p-4">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <!-- name form -->
+                <div class="mb-3">
+                    <label for=""class="form-label">Full Name</label>
+                    {{form.name}}
+                </div>
+                <!-- email  form  -->
+                 <div class="mb-3">
+                    <label for=""class="form-label">Email Address</label>
+                    {{form.email}}
+                </div>
+                <!--department form  -->
+                 <div class="mb-3">
+                    <label for=""class="form-label"> Department Name </label>
+                    {{form.department}}
+                </div>
+                <!-- designation form -->
+                 <div class="mb-3">
+                    <label for=""class="form-label"> Designation</label>
+                    {{form.designation}}
+                </div>
+                <!-- age form -->
+                 <div class="mb-3">
+                    <label for=""class="form-label">Age</label>
+                    {{form.age}}
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-dark btn-lg rounded-3 " type="submit"> Save Teacher </button>
+
+                </div>
+             </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
